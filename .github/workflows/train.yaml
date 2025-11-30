@@ -27,10 +27,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    # 4. Run the Training Script
-    - name: Train Model
-      run: |
-        python train.py 0.5 0.5
+    # 4. Run the Training Script WITH DRIFT
+    - name: Train Model (Simulating Drift)
+      run: python train.py 0.5 0.5 drift
         
     # 5. (Optional) Run a second experiment to ensure it handles changes
     - name: Test Variant Alpha
