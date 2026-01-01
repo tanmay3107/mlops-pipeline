@@ -18,7 +18,7 @@ if not api_key:
 genai.configure(api_key=api_key)
 
 # We use the Flash model for both generation and grading (Fast & Cheap)
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-2.5-flash')
 
 def llm_call_and_eval(prompt):
     """
