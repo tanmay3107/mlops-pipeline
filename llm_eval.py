@@ -105,6 +105,11 @@ if __name__ == "__main__":
             print(f"  - Q: '{p[:30]}...'")
             print(f"    -> Latency: {latency:.2f}s | Tokens: {tokens} | Judge Score: {score}")
 
+            # --- FIX: RATE LIMITING ---
+            # Wait 10 seconds between calls to respect Free Tier quota
+            print("    [Waiting 10s for API quota...]")
+            time.sleep(10)
+
         # Calculate Aggregates
         avg_faithfulness = np.mean(scores)
         avg_latency = np.mean(latencies)
